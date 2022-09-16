@@ -44,7 +44,7 @@ function draw() {
     rect(190, 20, 350, 250);
     */
 if(status1 != "") {
-    for (counter = 1; counter < objects.length; counter++) {
+    for (counter = 0; counter < objects.length; counter++) {
         document.getElementById("status_1").innerHTML = "Status : Object Detected";
 
         fill("red");
