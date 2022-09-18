@@ -14,3 +14,6 @@ body {
     background-size: cover;
     background-position: center;
 }
+canvas {
+    margin-left: 200px;
+}
