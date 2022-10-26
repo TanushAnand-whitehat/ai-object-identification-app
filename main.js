@@ -1,19 +1,16 @@
 image1 = "";
 status1 = "";
-objects = [];
+objects1 = [];
 
 function preload() {
-    image1 = loadImage('dog_cat.jpg');
+    image1 = loadImage('IMG-0665.jpg');
 }
 
 function setup() {
     canvas = createCanvas(300, 300);
     canvas.center();
-    video = createCapture(VIDEO);
-    video.hide();
-video.size(300, 300);
     object_detector = ml5.objectDetector('cocossd', modelLoaded);
-    document.getElementById("status_1").innerHTML = "Please wait, detecting objects..."
+    document.getElementById("status").innerHTML = "Please wait, detecting objects..."
 }
 function modelLoaded() {
     console.log('Model has loaded');
@@ -31,13 +28,13 @@ objects = results;
 }
 
 function draw() {
-    image(video, 0, 0, 300, 300);
+    image(image1, 0, 0, 300, 300);
 
 if(status1 != "") {
-    object_detector.detect(video, gotResults);
+    object_detector.detect(image1, gotResults);
     for (counter = 0; counter < objects.length; counter++) {
-        document.getElementById("status_1").innerHTML = "Status : Object Detected";
-        document.getElementById("no_objects").innerHTML = "No. of objects detected " + objects.length;
+        document.getElementById("status").innerHTML = "Status : Object Detected";
+        document.getElementById("objects").innerHTML = "No. of objects detected " + objects.length;
         r = random(255);
         g = random(255);
         b = random(255);
